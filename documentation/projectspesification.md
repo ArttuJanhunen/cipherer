@@ -18,8 +18,10 @@ character level.
 
 ### Algorithms
 
-Algorithms in use will be my own implementations for different ciphering styles, for example 
-[Columnar transposition](http://rumkin.com/tools/cipher/coltrans.php) will be used in this project.
+Algorithms in use will be my own implementations for different ciphering styles, for example:
+* [Columnar transposition](http://rumkin.com/tools/cipher/coltrans.php)
+* [Letter numbers](http://rumkin.com/tools/cipher/numbers.php)
+* [One time pad](http://rumkin.com/tools/cipher/otp.php)
 
 ### Program inputs
 
@@ -29,7 +31,10 @@ there.
 
 ### Expected time complexities
 
-TODO
+* Columnar transposition: O(n^2)
+* Letter numbers: O(n)
+* One time pad: O(n)
+
 
 ### Sources
 
