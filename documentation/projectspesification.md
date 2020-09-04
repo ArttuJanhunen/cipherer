@@ -9,7 +9,9 @@
 ### Problem to solve
 
 Basically this isn't a problem that is being solved, but the idea for this project is to create a way
-to encrypt and decrypt messages.
+to encrypt and decrypt messages. Idea is that you can play around with it or that you can send emails
+or messages that can be then decrypted in the other end. Also if this project gets to the point where
+it reads from a file, it can be used to create text files that have a little more privacy. 
 
 ### Data structures
 
@@ -27,7 +29,7 @@ Algorithms in use will be my own implementations for different ciphering styles,
 
 Program will receive its input from user through a text field and then produce encryption on decryption
 from that input. Another possibility would be to read from .txt files and produce wanted output from
-there.
+there. That said, this program aims to be a desktop application. 
 
 ### Expected time complexities
 
