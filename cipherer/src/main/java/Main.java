@@ -1,5 +1,5 @@
 
-import UI.MainGUI;
+import ui.MainGUI;
 
 public class Main {
     /**

@@ -1,4 +1,4 @@
-package UI;
+package ui;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -9,11 +9,16 @@ package UI;
  *
  * @author ajanhune
  */
-import Logic.LettersToNumbers;
+import logic.LettersToNumbers;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.*;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 public class MainGUI implements ActionListener {
 

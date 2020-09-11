@@ -1,6 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'jacoco'
 apply plugin: 'application'
+apply plugin: 'checkstyle'
 
 sourceCompatibility = '1.7'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
@@ -34,6 +35,14 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+checkstyle {
+        toolVersion = '8.6'
+         // checkstyle.xml copy from:
+        // https://raw.githubusercontent.com/checkstyle/checkstyle/checkstyle-8.6/src/main/resources/google_checks.xml
+        // the version should be as same as plugin version
+        configFile = rootProject.file('config/checkstyle/checkstyle.xml')
+    }
 
 jacocoTestReport {
     reports {

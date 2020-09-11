@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Logic;
+package logic;
 
-import Logic.Helpers.Pair;
+import logic.helpers.Pair;
 
 /**
  *
@@ -102,7 +102,9 @@ public class LettersToNumbers {
         char[] charMessage = message.toCharArray();
 
         for (char letter : charMessage) {
-            cryptedMessage += getNumber(letter) == -1 ? String.valueOf(letter) + "*" : String.valueOf(getNumber(letter)) + "*";
+            cryptedMessage += getNumber(letter) == -1
+                    ? String.valueOf(letter) + "*"
+                    : String.valueOf(getNumber(letter)) + "*";
         }
 
         return cryptedMessage;
@@ -112,7 +114,7 @@ public class LettersToNumbers {
      *
      * @param message string to be decrypted
      * @return returns decrypted version of the given string, assumed it has
-     * been encrypted correctly
+     *    been encrypted correctly
      */
     public static String decrypt(String message) {
         String decryptedMessage = "";
@@ -123,7 +125,9 @@ public class LettersToNumbers {
             if (number.equals("*")) {
                 continue;
             }
-            decryptedMessage += getChar(Integer.parseInt(number)) == '§' ? number : String.valueOf(getChar(Integer.parseInt(number)));
+            decryptedMessage += getChar(Integer.parseInt(number)) == '§'
+                    ? number
+                    : String.valueOf(getChar(Integer.parseInt(number)));
         }
 
         return decryptedMessage;
