@@ -10,3 +10,4 @@ Idea of this application is to provide means for encrypting and decrypting messa
 #### Week reports
 
 * [Week 1](https://github.com/ArttuJanhunen/cipherer/blob/master/documentation/weeklyreports/week1.md)
+* [Week 2](https://github.com/ArttuJanhunen/cipherer/blob/master/documentation/weeklyreports/week2.md)
