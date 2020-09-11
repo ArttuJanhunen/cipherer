@@ -1,2 +1,4 @@
 /cipherer/.gradle/
 /cipherer/build/
+/cipherer/target/
+/cipherer/nbproject/
