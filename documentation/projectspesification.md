@@ -34,7 +34,7 @@ there. That said, this program aims to be a desktop application.
 ### Expected time complexities
 
 * Columnar transposition: O(n^2)
-* Letter numbers: O(n)
+* Letter numbers: O(n^2)
 * One time pad: O(n)
 
 
