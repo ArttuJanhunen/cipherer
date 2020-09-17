@@ -19,6 +19,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import logic.KnapsackCrypt;
 
 public class MainGUI implements ActionListener {
 
@@ -27,12 +28,14 @@ public class MainGUI implements ActionListener {
     private JButton cipher = convertText();
     private JButton encrypt = encrypt();
     private JButton decrypt = decrypt();
+    private JButton change = changeMethod();
     private JTextArea introduction = welcome();
     private JTextArea writeArea = writeArea();
     private JTextArea resultArea = resultArea();
     private JScrollPane scrollWriteArea = makeScrollable(writeArea);
     private JScrollPane scrollResultArea = makeScrollable(resultArea);
-    private String method = "encrypt";
+    private String direction = "encrypt";
+    private String method = "letterstonumbers";
 
     // Frame of the GUI
     public void run() {
@@ -45,6 +48,7 @@ public class MainGUI implements ActionListener {
         frame.add(cipher);
         frame.add(encrypt);
         frame.add(decrypt);
+        frame.add(change);
         frame.add(convertInfo);
 
         frame.setSize(1000, 800);
@@ -56,9 +60,9 @@ public class MainGUI implements ActionListener {
 
     // Converting label
     private JLabel method() {
-        JLabel label = new JLabel("Encrypting");
+        JLabel label = new JLabel("Encrypting with letterstonumbers");
 
-        label.setBounds(450, 100, 200, 30);
+        label.setBounds(380, 100, 400, 30);
         label.setVisible(false);
 
         return label;
@@ -99,10 +103,19 @@ public class MainGUI implements ActionListener {
 
     private JButton decrypt() {
         JButton button = new JButton("Decrypt");
-
         button.addActionListener(this);
         button.setActionCommand("decrypt");
         button.setBounds(500, 30, 150, 30);
+        button.setVisible(false);
+
+        return button;
+    }
+
+    private JButton changeMethod() {
+        JButton button = new JButton("Change method");
+        button.addActionListener(this);
+        button.setActionCommand("change");
+        button.setBounds(670, 30, 200, 30);
         button.setVisible(false);
 
         return button;
@@ -184,29 +197,61 @@ public class MainGUI implements ActionListener {
             decrypt.setVisible(true);
             encrypt.setVisible(true);
             convertInfo.setVisible(true);
+            change.setVisible(true);
         }
 
         if (e.getActionCommand().equals("encrypt")) {
-            method = "encrypt";
-            convertInfo.setText("Encrypting");
+            direction = "encrypt";
+            convertInfo.setText("Encrypting with " + method);
             writeArea.setText("");
             resultArea.setText("");
         }
 
         if (e.getActionCommand().equals("decrypt")) {
-            method = "decrypt";
-            convertInfo.setText("Decrypting");
+            direction = "decrypt";
+            convertInfo.setText("Decrypting with " + method);
             writeArea.setText("");
             resultArea.setText("");
         }
 
         if (e.getActionCommand().equals("convert")) {
             System.out.println("Converting message: " + writeArea.getText());
-            if (method.equals("encrypt")) {
-                resultArea.setText(LettersToNumbers.encrypt(writeArea.getText()));
+            if (method.equals("letterstonumbers")) {
+                if (direction.equals("encrypt")) {
+                    resultArea.setText(LettersToNumbers.encrypt(writeArea.getText()));
+                } else {
+                    resultArea.setText(LettersToNumbers.decrypt(writeArea.getText()));
+                }
+            }
 
-            } else {
-                resultArea.setText(LettersToNumbers.decrypt(writeArea.getText()));
+            if (method.equals("knapsack")) {
+                if (direction.equals("encrypt")) {
+                    resultArea.setText(KnapsackCrypt.encrypt(writeArea.getText()));
+                } else {
+                    resultArea.setText(KnapsackCrypt.decrypt(writeArea.getText()));
+                }
+            }
+
+        }
+
+        if (e.getActionCommand().equals("change")) {
+            if (method.equals("letterstonumbers")) {
+                method = "knapsack";
+                if (direction.equals("encrypt")) {
+                    convertInfo.setText("Encrypting with " + method);
+                }
+                if (direction.equals("decrypt")) {
+                    convertInfo.setText("Decrypting with " + method);
+                }
+
+            } else if (method.equals("knapsack")) {
+                method = "letterstonumbers";
+                if (direction.equals("encrypt")) {
+                    convertInfo.setText("Encrypting with " + method);
+                }
+                if (direction.equals("decrypt")) {
+                    convertInfo.setText("Decrypting with " + method);
+                }
             }
         }
     }
