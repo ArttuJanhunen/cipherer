@@ -22,7 +22,8 @@ jobs:
       TERM: dumb
 
     steps:
-      - checkout
+      - checkout:
+            path: ~/repo
 
       # Download and cache dependencies
       - restore_cache:
