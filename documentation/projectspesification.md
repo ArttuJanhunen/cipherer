@@ -21,9 +21,8 @@ character level.
 ### Algorithms
 
 Algorithms in use will be my own implementations for different ciphering styles, for example:
-* [Columnar transposition](http://rumkin.com/tools/cipher/coltrans.php)
 * [Letter numbers](http://rumkin.com/tools/cipher/numbers.php)
-* [One time pad](http://rumkin.com/tools/cipher/otp.php)
+* [Knapsack cryptosystem](https://en.wikipedia.org/wiki/Merkle%E2%80%93Hellman_knapsack_cryptosystem)
 
 ### Program inputs
 
@@ -33,12 +32,11 @@ there. That said, this program aims to be a desktop application.
 
 ### Expected time complexities
 
-* Columnar transposition: O(n^2)
 * Letter numbers: O(n^2)
-* One time pad: O(n)
-
+* Knapsack cryptosystem: 0(n^2)
 
 ### Sources
 
 [Cipher tools](http://rumkin.com/tools/cipher/index.php)
-
+[Knapsack source 1](https://en.wikipedia.org/wiki/Merkle%E2%80%93Hellman_knapsack_cryptosystem)
+[Knapsack source 2](https://www.geeksforgeeks.org/knapsack-encryption-algorithm-in-cryptography/)
