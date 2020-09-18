@@ -114,7 +114,7 @@ public class LettersToNumbers {
      *
      * @param message string to be decrypted
      * @return returns decrypted version of the given string, assumed it has
-     *    been encrypted correctly
+     * been encrypted correctly
      */
     public static String decrypt(String message) {
         String decryptedMessage = "";
@@ -122,12 +122,13 @@ public class LettersToNumbers {
         String[] intMessage = message.split("\\*");
 
         for (String number : intMessage) {
-            if (number.equals("*")) {
-                continue;
+            try {
+                decryptedMessage += getChar(Integer.parseInt(number)) == '§'
+                        ? number
+                        : String.valueOf(getChar(Integer.parseInt(number)));
+            } catch (NumberFormatException e) {
+                return "Error in decrypting text";
             }
-            decryptedMessage += getChar(Integer.parseInt(number)) == '§'
-                    ? number
-                    : String.valueOf(getChar(Integer.parseInt(number)));
         }
 
         return decryptedMessage;

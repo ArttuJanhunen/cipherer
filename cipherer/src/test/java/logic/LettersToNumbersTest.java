@@ -64,4 +64,12 @@ public class LettersToNumbersTest {
         
         assertEquals("257", LettersToNumbers.decrypt("257"));
     }
+    
+    @Test
+    public void decryptionErrorReturnsErrorMessage(){
+        
+        assertEquals("Error in decrypting text", LettersToNumbers.decrypt("*1*2**3"));
+    }
+    
+    
 }
