@@ -1,6 +1,6 @@
 # Cipherer, desktop application for ciphering messages.
 
-
+[![codecov](https://codecov.io/gh/ArttuJanhunen/cipherer/branch/master/graph/badge.svg)](https://codecov.io/gh/ArttuJanhunen/cipherer)
 
 This application is created for University of Helsinki Data Structure Lab course.
 Idea of this application is to provide means for encrypting and decrypting messages and possibly .txt files.
