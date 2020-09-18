@@ -56,6 +56,6 @@ public class Binary {
             helper++;
         }
 
-        return converted;
+        return converted.trim();
     }
 }

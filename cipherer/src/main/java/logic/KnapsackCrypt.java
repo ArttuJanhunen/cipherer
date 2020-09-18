@@ -61,7 +61,7 @@ public class KnapsackCrypt {
             encrypted += sliceToString(slicedMessage[i]) + " ";
         }
 
-        return encrypted;
+        return encrypted.trim();
     }
 
     /**
@@ -118,7 +118,7 @@ public class KnapsackCrypt {
     /**
      *
      * @param slice encrypted value of a letter
-     * @return slice in string format
+     * @return slice's total sum in string format
      */
     public static String sliceToString(int[] slice) {
 

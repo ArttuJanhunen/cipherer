@@ -13,6 +13,7 @@ sourceCompatibility = '1.7'
 // Note however, that you may define your own "run" and "debug" task if you
 // prefer. In this case NetBeans will not add these tasks but you may rely on
 // your own implementation.
+mainClassName = "Main"
 if (!hasProperty('mainClass')) {
     ext.mainClass = 'Main'
 }
@@ -28,21 +29,21 @@ dependencies {
     // TODO: Add dependencies here ...
     // You can read more about how to add dependency here:
     //   http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:how_to_declare_your_dependencies
-    testCompile group: 'junit', name: 'junit', version: '4.10'
+    testImplementation('junit:junit:4.13')
     
 }
 
-test {
-    useJUnitPlatform()
+checkstyle {
+    toolVersion = '8.6'
+    // checkstyle.xml copy from:
+    // https://raw.githubusercontent.com/checkstyle/checkstyle/checkstyle-8.6/src/main/resources/google_checks.xml
+    // the version should be as same as plugin version
+    configFile = rootProject.file('config/checkstyle/checkstyle.xml')
 }
 
-checkstyle {
-        toolVersion = '8.6'
-         // checkstyle.xml copy from:
-        // https://raw.githubusercontent.com/checkstyle/checkstyle/checkstyle-8.6/src/main/resources/google_checks.xml
-        // the version should be as same as plugin version
-        configFile = rootProject.file('config/checkstyle/checkstyle.xml')
-    }
+jacoco {
+    toolVersion = "0.8.2"
+}
 
 jacocoTestReport {
     reports {
