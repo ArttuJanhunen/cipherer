@@ -52,4 +52,16 @@ public class LettersToNumbersTest {
         assertEquals(testString, LettersToNumbers.decrypt(encrypted));
         
     }
+    
+    @Test
+    public void encryptionReturnsGivenCharWhenLetterIsUnknown(){
+        
+        assertEquals("#*", LettersToNumbers.encrypt("#"));
+    }
+    
+    @Test
+    public void decryptionReturnsGivenNumberWhenNubmerIsUnknown(){
+        
+        assertEquals("257", LettersToNumbers.decrypt("257"));
+    }
 }
