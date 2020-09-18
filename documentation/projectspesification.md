@@ -37,6 +37,6 @@ there. That said, this program aims to be a desktop application.
 
 ### Sources
 
-[Cipher tools](http://rumkin.com/tools/cipher/index.php)
-[Knapsack source 1](https://en.wikipedia.org/wiki/Merkle%E2%80%93Hellman_knapsack_cryptosystem)
-[Knapsack source 2](https://www.geeksforgeeks.org/knapsack-encryption-algorithm-in-cryptography/)
+* [Cipher tools](http://rumkin.com/tools/cipher/index.php)
+* [Knapsack source 1](https://en.wikipedia.org/wiki/Merkle%E2%80%93Hellman_knapsack_cryptosystem)
+* [Knapsack source 2](https://www.geeksforgeeks.org/knapsack-encryption-algorithm-in-cryptography/)
