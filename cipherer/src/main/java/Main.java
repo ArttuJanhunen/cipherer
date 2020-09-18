@@ -1,5 +1,4 @@
 
-import logic.KnapsackCrypt;
 import ui.MainGUI;
 
 public class Main {

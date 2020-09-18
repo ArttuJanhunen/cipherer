@@ -11,6 +11,11 @@ package logic.helpers;
  */
 public class Binary {
 
+    /**
+     *
+     * @param message message to be encrypted in char[] form
+     * @return char[] that contains message in binary form
+     */
     public static char[] convertToBinary(char[] message) {
         String binaryForm = "";
 
@@ -27,6 +32,11 @@ public class Binary {
         return binaryChar;
     }
 
+    /**
+     *
+     * @param message decrypted message in binary form
+     * @return decrypted message in plain text
+     */
     public static String convertToString(String message) {
         String converted = "";
         int helper = 0;

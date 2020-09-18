@@ -11,6 +11,9 @@ package ui;
  */
 import logic.LettersToNumbers;
 import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
@@ -29,6 +32,7 @@ public class MainGUI implements ActionListener {
     private JButton encrypt = encrypt();
     private JButton decrypt = decrypt();
     private JButton change = changeMethod();
+    private JButton copy = copyText();
     private JTextArea introduction = welcome();
     private JTextArea writeArea = writeArea();
     private JTextArea resultArea = resultArea();
@@ -49,6 +53,7 @@ public class MainGUI implements ActionListener {
         frame.add(encrypt);
         frame.add(decrypt);
         frame.add(change);
+        frame.add(copy);
         frame.add(convertInfo);
 
         frame.setSize(1000, 800);
@@ -116,6 +121,16 @@ public class MainGUI implements ActionListener {
         button.addActionListener(this);
         button.setActionCommand("change");
         button.setBounds(670, 30, 200, 30);
+        button.setVisible(false);
+
+        return button;
+    }
+
+    private JButton copyText() {
+        JButton button = new JButton("Copy");
+        button.addActionListener(this);
+        button.setActionCommand("copy");
+        button.setBounds(425, 600, 150, 30);
         button.setVisible(false);
 
         return button;
@@ -198,6 +213,7 @@ public class MainGUI implements ActionListener {
             encrypt.setVisible(true);
             convertInfo.setVisible(true);
             change.setVisible(true);
+            copy.setVisible(true);
         }
 
         if (e.getActionCommand().equals("encrypt")) {
@@ -235,6 +251,8 @@ public class MainGUI implements ActionListener {
         }
 
         if (e.getActionCommand().equals("change")) {
+            writeArea.setText("");
+            resultArea.setText("");
             if (method.equals("letterstonumbers")) {
                 method = "knapsack";
                 if (direction.equals("encrypt")) {
@@ -253,6 +271,12 @@ public class MainGUI implements ActionListener {
                     convertInfo.setText("Decrypting with " + method);
                 }
             }
+        }
+
+        if (e.getActionCommand().equals("copy")) {
+            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+            StringSelection selected = new StringSelection(resultArea.getText());
+            clipboard.setContents(selected, null);
         }
     }
 

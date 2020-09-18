@@ -13,19 +13,36 @@ import logic.helpers.Binary;
  */
 public class KnapsackCrypt {
 
+    // Private key
     private static int[] privateKey = {2, 7, 11, 21, 42, 89, 180, 354};
+
+    // Public key created from private key
     private static int[] publicKey = new int[privateKey.length];
 
+    // Number bigger than private keys combined value that will take modulo
+    // when encrypting
     private static int m = 881;
+
+    // Number that has 1 as greatest common divisor with m
     private static int n = 588;
+
+    // Multiplicative inverse for n mod m
     private static int x = 442;
 
+    /**
+     * Creates public key with private key and m and m
+     */
     public static void createPublicKey() {
         for (int i = 0; i < privateKey.length; i++) {
             publicKey[i] = (privateKey[i] * n) % m;
         }
     }
 
+    /**
+     *
+     * @param message message to be encrypted
+     * @return returns string value of the encrypted message
+     */
     public static String encrypt(String message) {
         String encrypted = "";
 
@@ -47,6 +64,11 @@ public class KnapsackCrypt {
         return encrypted;
     }
 
+    /**
+     *
+     * @param message encrypted message string
+     * @return returns decrypted message in string format
+     */
     public static String decrypt(String message) {
         String[] messageSlots = message.split(" ");
         String decryptedMessage = "";
@@ -66,6 +88,14 @@ public class KnapsackCrypt {
         return decryptedAndConverted;
     }
 
+    /**
+     *
+     * @param message int[] format of the message that has been converted to
+     * binary
+     * @return returns int[][] format for the binary message that has been
+     * encrypted with the public key where int[this has letters index][this has
+     * the letters value]
+     */
     public static int[][] slice(int[] message) {
         createPublicKey();
         int size = 8;
@@ -85,6 +115,11 @@ public class KnapsackCrypt {
         return result;
     }
 
+    /**
+     *
+     * @param slice encrypted value of a letter
+     * @return slice in string format
+     */
     public static String sliceToString(int[] slice) {
 
         int total = 0;
@@ -97,6 +132,12 @@ public class KnapsackCrypt {
         return sliceString;
     }
 
+    /**
+     *
+     * @param number int value of the encrypted letter that has been treated
+     * with (number * x) % m
+     * @return string value of the decrypted letter, in binary form
+     */
     public static String decryptSlot(int number) {
         int helper = number;
         String decrypted = "";
