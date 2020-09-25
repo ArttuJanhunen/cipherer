@@ -23,6 +23,7 @@ character level.
 Algorithms in use will be my own implementations for different ciphering styles, for example:
 * [Letter numbers](http://rumkin.com/tools/cipher/numbers.php)
 * [Knapsack cryptosystem](https://en.wikipedia.org/wiki/Merkle%E2%80%93Hellman_knapsack_cryptosystem)
+* [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
 
 ### Program inputs
 
@@ -34,9 +35,12 @@ there. That said, this program aims to be a desktop application.
 
 * Letter numbers: O(n^2)
 * Knapsack cryptosystem: 0(n^2)
+* RSA: O(n)
 
 ### Sources
 
 * [Cipher tools](http://rumkin.com/tools/cipher/index.php)
 * [Knapsack source 1](https://en.wikipedia.org/wiki/Merkle%E2%80%93Hellman_knapsack_cryptosystem)
 * [Knapsack source 2](https://www.geeksforgeeks.org/knapsack-encryption-algorithm-in-cryptography/)
+* [RSA source 1](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
+* [RSA source 2](https://www.geeksforgeeks.org/rsa-algorithm-cryptography/)
