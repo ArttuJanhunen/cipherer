@@ -51,4 +51,14 @@ public class RSATest {
         
         assertEquals(fish, decrypted);
     }
+    
+    @Test
+    public void encryptAndDecryptWorkWithUnevenWords(){
+        String fish = "kalat";
+        String encrypted = RSA.encrypt(fish);
+        String decrypted = RSA.decrypt(encrypted);
+        
+        assertEquals(fish, decrypted);
+    } 
+    
 }
