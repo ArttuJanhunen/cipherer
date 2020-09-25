@@ -59,6 +59,15 @@ public class RSATest {
         String decrypted = RSA.decrypt(encrypted);
         
         assertEquals(fish, decrypted);
-    } 
+    }
+    
+    @Test
+    public void twoAsciisAreConvertedCorrectlyToStringWhenItIsNotInitiallyFullLenght(){
+        String aa = "aa";
+        String encrypted = RSA.encrypt(aa);
+        String decrypted = RSA.decrypt(encrypted);
+        
+        assertEquals(aa, decrypted);
+    }
     
 }
