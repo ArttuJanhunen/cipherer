@@ -10,7 +10,7 @@ Idea of this application is to provide means for encrypting and decrypting messa
 
 [Project specification](https://github.com/ArttuJanhunen/cipherer/blob/master/documentation/projectspesification.md)
 
-[Implementation](https://github.com/ArttuJanhunen/cipherer/blob/master/documentation/implementationdocument.md)
+[Implementation](https://github.com/ArttuJanhunen/cipherer/blob/master/documentation/implementation.md)
 
 [Testing](https://github.com/ArttuJanhunen/cipherer/blob/master/documentation/testingdocument.md)
 
