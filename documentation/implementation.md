@@ -18,4 +18,4 @@ along with the helper classes.
 
 ### Class dependency flow
 
-![Structure](https://github.com/ArttuJanhunen/cipherer/tree/master/documentation/pictures/structure.png "Project layout")
+![Structure](https://github.com/ArttuJanhunen/cipherer/blob/master/documentation/pictures/structure.png "Project layout")
