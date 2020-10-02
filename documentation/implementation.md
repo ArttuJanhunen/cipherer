@@ -6,7 +6,7 @@
 
 ##### Encrypting
 
-`
+```
 // encryption method
 cast given message to char array charMessage
 create empty string cryptedMessage
@@ -19,7 +19,7 @@ for each pair object in pair list
   if pair's char value equals given char
     return pair's number value
   else return '-1'
-`
+```
 
 This leads to a complexity of `O(n*m)`, where `n` is the lenght of the message and `m` is the size of
 the alpabets used. Worst case scenarios happen when `m>n`, where time complexity compared to `n` can rise
@@ -28,7 +28,7 @@ program's case `m=78`, so complexity will boil down to `O(n*m), n>m` and `O(n^k)
 
 ##### Decrypting
 
-`
+```
 // decryption method
 create empty string decryptedMessage
 split encrypted message when '*' is encountered
@@ -42,16 +42,16 @@ for each pair object in pair list
   if pair's number value equals given number
     return pair's letter value
   else return '§'
-`
+```
 Complexity on this is the same as calculated above.
 
 #### Knapsack Cryptosystem
 
 ##### Encrypting
 
-`
+```
 
-`
+```
 
 ### GUI
 
