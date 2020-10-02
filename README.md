@@ -20,6 +20,9 @@ Idea of this application is to provide means for encrypting and decrypting messa
 * [Week 2](https://github.com/ArttuJanhunen/cipherer/blob/master/documentation/weeklyreports/week2.md)
 * [Week 3](https://github.com/ArttuJanhunen/cipherer/blob/master/documentation/weeklyreports/week3.md)
 * [Week 4](https://github.com/ArttuJanhunen/cipherer/blob/master/documentation/weeklyreports/week4.md)
+* [Week 5](https://github.com/ArttuJanhunen/cipherer/blob/master/documentation/weeklyreports/week5.md)
+
+
 ### Project at this point
 
 Project can be run from terminal with command `gradle run` in project folder and it has a user interface. It has two ciphering algorithms
