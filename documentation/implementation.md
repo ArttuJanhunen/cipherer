@@ -11,4 +11,11 @@ Input and output are both provided trough UI, and currently input is given via k
 Output is provided to the lower text field as encrypted or decrypted result for the given input.
 
 
+### Logic
 
+Programs functionality is based in the logic folder, which has the three ciphering methods inside it
+along with the helper classes. 
+
+### Class dependency flow
+
+![Structure](https://github.com/ArttuJanhunen/cipherer/tree/master/documentation/pictures/structure.png "Project layout")
