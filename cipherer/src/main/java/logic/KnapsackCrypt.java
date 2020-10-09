@@ -98,7 +98,6 @@ public class KnapsackCrypt {
      */
     public static int[][] slice(int[] message) {
         createPublicKey();
-        int size = 8;
         int numberSlot = 0;
         int tableSlot = 0;
         int tableAmount = (int) Math.ceil(message.length / 8.0);
