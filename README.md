@@ -14,6 +14,8 @@ Idea of this application is to provide means for encrypting and decrypting messa
 
 [Testing](https://github.com/ArttuJanhunen/cipherer/blob/master/documentation/testingdocument.md)
 
+[Instructions](https://github.com/ArttuJanhunen/cipherer/blob/master/documentation/userinstructions.md)
+
 #### Week reports
 
 * [Week 1](https://github.com/ArttuJanhunen/cipherer/blob/master/documentation/weeklyreports/week1.md)
