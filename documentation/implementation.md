@@ -151,6 +151,60 @@ return converted
 
 This leads to time complexity of `O(16n+8n+n) = O(25n)`
 
+#### RSA
+
+##### Encrypting
+
+```
+convert message to chararray charMessage
+convert charMessage to int[] intMessage with twoCharsToInt (explained below)
+
+for each int in intMessage 
+  convert int to bigInteger toEncrypt
+  bigInteger modPow = toEncrypt^e % n
+  long encryptedLong = modPow
+  encryptedMessage += encryptedLong +" "
+
+return encryptedMessage
+
+// twoCharsToInt
+
+int[] intMessage = new int[]
+
+if charMessage length % 2 == 0
+  intMessage length = charMessage / 2
+else
+  intMessage length = charMessage / 2 + 1
+
+int charAmount = 0
+int helper = 0
+combineChar = ""
+
+for int i = 0, i < charMessage length, i++
+  convert charMessage[i] to int charValue 
+  charToCorrectLength = charValue + ""
+  while charToCorrectLength length < 3
+    charToCorrectLength = "0" + charToCorrectLength
+  combineChar += charToCorrectLength
+  charAmount++
+  if charAmount >= 2 or i == charMessage length -1
+    intMessage[helper] = combineChar parsed to integer
+    helper++
+    charAmount = 0
+    combineChar = ""
+
+return intMessage
+```
+
+This will lead to a time complexity of `O(4n)` in the worst case. 
+
+##### Decrypting
+
+```
+
+
+```
+
 ### GUI
 
 User interface is graphical and created with java swing library. UI then proceeds to call core methods
