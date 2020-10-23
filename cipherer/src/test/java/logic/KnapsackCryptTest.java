@@ -73,4 +73,10 @@ public class KnapsackCryptTest {
         assertEquals("28", sliceTotal);
     }
 
+    @Test
+    public void decryptionErrorReturnsErrorMessage() {
+
+        assertEquals("Malformed message given, try again", KnapsackCrypt.decrypt("aaaaa"));
+    }
+
 }

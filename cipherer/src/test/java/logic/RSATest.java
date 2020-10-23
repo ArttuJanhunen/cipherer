@@ -17,22 +17,22 @@ import static org.junit.Assert.*;
  * @author ajanhune
  */
 public class RSATest {
-    
+
     public RSATest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -42,32 +42,37 @@ public class RSATest {
     //
     // @Test
     // public void hello() {}
-    
     @Test
-    public void encryptAndDecryptWork(){
+    public void encryptAndDecryptWork() {
         String fish = "fish";
         String encrypted = RSA.encrypt(fish);
         String decrypted = RSA.decrypt(encrypted);
-        
+
         assertEquals(fish, decrypted);
     }
-    
+
     @Test
-    public void encryptAndDecryptWorkWithUnevenWords(){
+    public void encryptAndDecryptWorkWithUnevenWords() {
         String fish = "kalat";
         String encrypted = RSA.encrypt(fish);
         String decrypted = RSA.decrypt(encrypted);
-        
+
         assertEquals(fish, decrypted);
     }
-    
+
     @Test
-    public void twoAsciisAreConvertedCorrectlyToStringWhenItIsNotInitiallyFullLenght(){
+    public void twoAsciisAreConvertedCorrectlyToStringWhenItIsNotInitiallyFullLenght() {
         String aa = "aa";
         String encrypted = RSA.encrypt(aa);
         String decrypted = RSA.decrypt(encrypted);
-        
+
         assertEquals(aa, decrypted);
     }
-    
+
+    @Test
+    public void decryptionErrorReturnsErrorMessage() {
+
+        assertEquals("Malformed message given, try again", RSA.decrypt("aaa"));
+    }
+
 }
