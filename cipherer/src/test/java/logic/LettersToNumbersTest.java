@@ -68,7 +68,7 @@ public class LettersToNumbersTest {
     @Test
     public void decryptionErrorReturnsErrorMessage(){
         
-        assertEquals("Error in decrypting text", LettersToNumbers.decrypt("*1*2**3"));
+        assertEquals("Malformed message given, try again", LettersToNumbers.decrypt("*1*2**3"));
     }
     
     
