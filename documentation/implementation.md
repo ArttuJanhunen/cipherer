@@ -231,7 +231,7 @@ return letters
 
 ```
 
-This leads to time complexity of `O(2n)` or in worst case to `O(4n)`.
+This leads to time complexity of `O(4n)` in the worst case.
 
 ### GUI
 
