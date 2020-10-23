@@ -74,8 +74,12 @@ public class KnapsackCrypt {
         String decryptedMessage = "";
         int[] intSlots = new int[messageSlots.length];
 
-        for (int i = 0; i < messageSlots.length; i++) {
-            intSlots[i] = Integer.parseInt(messageSlots[i]);
+        try {
+            for (int i = 0; i < messageSlots.length; i++) {
+                intSlots[i] = Integer.parseInt(messageSlots[i]);
+            }
+        } catch (NumberFormatException e) {
+            return "Malformed message given, try again";
         }
 
         for (int number : intSlots) {

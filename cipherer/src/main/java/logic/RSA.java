@@ -52,11 +52,16 @@ public class RSA {
         String[] messageSplit = message.split(" ");
         String[] decryptedSplit = new String[messageSplit.length];
 
-        for (int i = 0; i < messageSplit.length; i++) {
-            BigInteger split = new BigInteger(messageSplit[i]);
-            BigInteger modPow = split.modPow(new BigInteger(String.valueOf(privateKeyD)), new BigInteger(String.valueOf(publicKeyN)));
-            Long decryptedLong = modPow.longValue();
-            decryptedSplit[i] = decryptedLong + "";
+        try {
+            for (int i = 0; i < messageSplit.length; i++) {
+                BigInteger split = new BigInteger(messageSplit[i]);
+                BigInteger modPow = split.modPow(new BigInteger(String.valueOf(privateKeyD)), new BigInteger(String.valueOf(publicKeyN)));
+                Long decryptedLong = modPow.longValue();
+                decryptedSplit[i] = decryptedLong + "";
+            }
+
+        } catch (Exception e) {
+            return "Malformed message given, try again";
         }
 
         for (int i = 0; i < decryptedSplit.length; i++) {

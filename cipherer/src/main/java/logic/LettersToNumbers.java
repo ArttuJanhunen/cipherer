@@ -127,7 +127,7 @@ public class LettersToNumbers {
                         ? number
                         : String.valueOf(getChar(Integer.parseInt(number)));
             } catch (NumberFormatException e) {
-                return "Error in decrypting text";
+                return "Malformed message given, try again";
             }
         }
 
