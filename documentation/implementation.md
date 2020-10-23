@@ -201,9 +201,37 @@ This will lead to a time complexity of `O(4n)` in the worst case.
 ##### Decrypting
 
 ```
+String[] messageSplit = split encrypted message with each " "
+String[] decryptedSplit = String[messageSplit length]
 
+for int i=0, i< messageSplit length, i++
+  BigInt split = new BigInt(messageSplit[i])
+  BigInt modPow = split^privatekey%publickey
+  decrypted = modPow
+  decryptedSplit[i] += decrypted + ""
+
+for int i=0, i<decryptedSplit length, i++
+  decrypted += asciiToLetter(decryptedSplit[i])
+
+return decrypted
+
+// asciiToLetter
+
+letters = ""
+
+if message length <= 3
+  letter += (char) message
+else
+  while message length < 6
+    message = "0" + message
+  letters += (char) message substring(0,3)
+  letters += (char) message substring(3)
+
+return letters
 
 ```
+
+This leads to time complexity of `O(2n)` or in worst case to `O(4n)`.
 
 ### GUI
 
