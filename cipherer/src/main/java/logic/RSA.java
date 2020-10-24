@@ -6,6 +6,7 @@
 package logic;
 
 import java.math.BigInteger;
+import logic.helpers.Splitter;
 import logic.helpers.SubString;
 
 /**
@@ -50,7 +51,7 @@ public class RSA {
      */
     public static String decrypt(String message) {
         String decrypted = "";
-        String[] messageSplit = message.split(" ");
+        String[] messageSplit = Splitter.split(message, ' ');
         String[] decryptedSplit = new String[messageSplit.length];
 
         try {

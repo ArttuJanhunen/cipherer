@@ -6,6 +6,7 @@
 package logic;
 
 import logic.helpers.Binary;
+import logic.helpers.Splitter;
 
 /**
  *
@@ -70,7 +71,7 @@ public class KnapsackCrypt {
      * @return returns decrypted message in string format
      */
     public static String decrypt(String message) {
-        String[] messageSlots = message.split(" ");
+        String[] messageSlots = Splitter.split(message, ' ');
         String decryptedMessage = "";
         int[] intSlots = new int[messageSlots.length];
 

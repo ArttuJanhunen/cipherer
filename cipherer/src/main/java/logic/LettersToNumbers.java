@@ -6,6 +6,8 @@
 package logic;
 
 import logic.helpers.Pair;
+import logic.helpers.Splitter;
+import logic.helpers.SubString;
 
 /**
  *
@@ -107,6 +109,7 @@ public class LettersToNumbers {
                     : String.valueOf(getNumber(letter)) + "*";
         }
 
+        cryptedMessage = SubString.subString(cryptedMessage, 0, cryptedMessage.length() - 1);
         return cryptedMessage;
     }
 
@@ -119,7 +122,7 @@ public class LettersToNumbers {
     public static String decrypt(String message) {
         String decryptedMessage = "";
 
-        String[] intMessage = message.split("\\*");
+        String[] intMessage = Splitter.split(message, '*');
 
         for (String number : intMessage) {
             try {

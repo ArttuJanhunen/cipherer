@@ -54,7 +54,7 @@ public class LettersToNumbersTest {
     @Test
     public void encryptionReturnsGivenCharWhenLetterIsUnknown() {
 
-        assertEquals("#*", LettersToNumbers.encrypt("#"));
+        assertEquals("#", LettersToNumbers.encrypt("#"));
     }
 
     @Test

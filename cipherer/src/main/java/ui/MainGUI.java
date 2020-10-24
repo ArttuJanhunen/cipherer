@@ -27,21 +27,21 @@ import logic.RSA;
 
 public class MainGUI implements ActionListener {
 
-    private JLabel convertInfo = method();
-    private JLabel timeheader = time();
-    private JLabel testHeader = testHeader();
-    private JLabel lettersToNumbers = lettersAndNumbersResults();
-    private JLabel knapsack = knapsackResults();
-    private JLabel rsa = rsaResults();
-    private JLabel lettersToNumbers1 = lettersAndNumbers1();
-    private JLabel knapsack1 = knapsack1();
-    private JLabel rsa1 = rsa1();
-    private JLabel lettersToNumbers2 = lettersAndNumbers2();
-    private JLabel knapsack2 = knapsack2();
-    private JLabel rsa2 = rsa2();
-    private JLabel lettersToNumbers3 = lettersAndNumbers3();
-    private JLabel knapsack3 = knapsack3();
-    private JLabel rsa3 = rsa3();
+    private JLabel convertInfo = Labels.method();
+    private JLabel timeheader = Labels.time();
+    private JLabel testHeader = Labels.testHeader();
+    private JLabel lettersToNumbers = Labels.lettersAndNumbersResults();
+    private JLabel knapsack = Labels.knapsackResults();
+    private JLabel rsa = Labels.rsaResults();
+    private JLabel lettersToNumbers1 = Labels.lettersAndNumbers1();
+    private JLabel knapsack1 = Labels.knapsack1();
+    private JLabel rsa1 = Labels.rsa1();
+    private JLabel lettersToNumbers2 = Labels.lettersAndNumbers2();
+    private JLabel knapsack2 = Labels.knapsack2();
+    private JLabel rsa2 = Labels.rsa2();
+    private JLabel lettersToNumbers3 = Labels.lettersAndNumbers3();
+    private JLabel knapsack3 = Labels.knapsack3();
+    private JLabel rsa3 = Labels.rsa3();
     private JButton start = start();
     private JButton performance = performance();
     private JButton test = startTests();
@@ -51,11 +51,11 @@ public class MainGUI implements ActionListener {
     private JButton decrypt = decrypt();
     private JButton change = changeMethod();
     private JButton copy = copyText();
-    private JTextArea introduction = welcome();
-    private JTextArea writeArea = writeArea();
-    private JTextArea resultArea = resultArea();
-    private JScrollPane scrollWriteArea = makeScrollable(writeArea);
-    private JScrollPane scrollResultArea = makeScrollable(resultArea);
+    private JTextArea introduction = TextAreas.welcome();
+    private JTextArea writeArea = TextAreas.writeArea();
+    private JTextArea resultArea = TextAreas.resultArea();
+    private JScrollPane scrollWriteArea = TextAreas.makeScrollable(writeArea);
+    private JScrollPane scrollResultArea = TextAreas.makeScrollable(resultArea);
     private String direction = "encrypt";
     private String method = "letterstonumbers";
 
@@ -96,142 +96,6 @@ public class MainGUI implements ActionListener {
         frame.setVisible(true);
         frame.setLocation(500, 100);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
-
-    // GUI labels
-    private JLabel method() {
-        JLabel label = new JLabel("Encrypting with letterstonumbers");
-
-        label.setBounds(380, 100, 400, 30);
-        label.setVisible(false);
-
-        return label;
-    }
-
-    private JLabel time() {
-        JLabel label = new JLabel("");
-
-        label.setBounds(410, 700, 150, 30);
-        label.setVisible(false);
-
-        return label;
-    }
-
-    private JLabel testHeader() {
-        JLabel label = new JLabel("Performance testing");
-
-        label.setBounds(425, 50, 400, 30);
-        label.setVisible(false);
-
-        return label;
-    }
-
-    private JLabel lettersAndNumbersResults() {
-        JLabel label = new JLabel("LettersToNumbers results: ");
-
-        label.setBounds(50, 150, 400, 30);
-        label.setVisible(false);
-
-        return label;
-    }
-
-    private JLabel knapsackResults() {
-        JLabel label = new JLabel("Knapsack results: ");
-
-        label.setBounds(50, 350, 400, 30);
-        label.setVisible(false);
-
-        return label;
-    }
-
-    private JLabel rsaResults() {
-        JLabel label = new JLabel("RSA results: ");
-
-        label.setBounds(50, 550, 400, 30);
-        label.setVisible(false);
-
-        return label;
-    }
-
-    private JLabel lettersAndNumbers1() {
-        JLabel label = new JLabel("LettersToNumbers 1000 words: ");
-
-        label.setBounds(50, 190, 400, 30);
-        label.setVisible(false);
-
-        return label;
-    }
-
-    private JLabel knapsack1() {
-        JLabel label = new JLabel("Knapsack 1000 words: ");
-
-        label.setBounds(50, 390, 400, 30);
-        label.setVisible(false);
-
-        return label;
-    }
-
-    private JLabel rsa1() {
-        JLabel label = new JLabel("RSA 1000 words: ");
-
-        label.setBounds(50, 590, 400, 30);
-        label.setVisible(false);
-
-        return label;
-    }
-
-    private JLabel lettersAndNumbers2() {
-        JLabel label = new JLabel("LettersToNumbers 5000 words: ");
-
-        label.setBounds(50, 230, 400, 30);
-        label.setVisible(false);
-
-        return label;
-    }
-
-    private JLabel knapsack2() {
-        JLabel label = new JLabel("Knapsack 5000 words: ");
-
-        label.setBounds(50, 430, 400, 30);
-        label.setVisible(false);
-
-        return label;
-    }
-
-    private JLabel rsa2() {
-        JLabel label = new JLabel("RSA 5000 words: ");
-
-        label.setBounds(50, 630, 400, 30);
-        label.setVisible(false);
-
-        return label;
-    }
-
-    private JLabel lettersAndNumbers3() {
-        JLabel label = new JLabel("LettersToNumbers 10 000 words: ");
-
-        label.setBounds(50, 270, 400, 30);
-        label.setVisible(false);
-
-        return label;
-    }
-
-    private JLabel knapsack3() {
-        JLabel label = new JLabel("Knapsack 10 000 words: ");
-
-        label.setBounds(50, 470, 400, 30);
-        label.setVisible(false);
-
-        return label;
-    }
-
-    private JLabel rsa3() {
-        JLabel label = new JLabel("RSA 10 000 words: ");
-
-        label.setBounds(50, 670, 400, 30);
-        label.setVisible(false);
-
-        return label;
     }
 
     // GUI buttons
@@ -327,66 +191,6 @@ public class MainGUI implements ActionListener {
         button.setVisible(false);
 
         return button;
-    }
-
-    // GUI text areas
-    private JTextArea welcome() {
-        JTextArea area = new JTextArea();
-
-        area.setText("Welcome to the Cipherer! In this application you can "
-                + "encrypt and decrypt your messages easily and then copy them "
-                + "and pass them on!");
-
-        area.setEditable(false);
-        area.setLineWrap(true);
-        area.setWrapStyleWord(true);
-        area.setColumns(20);
-        area.setRows(3);
-        area.setBounds(200, 100, 600, 70);
-        area.setFont(new Font("Arial Black", Font.BOLD, 16));
-        area.setBorder(BorderFactory.createBevelBorder(1));
-
-        return area;
-    }
-
-    private JTextArea writeArea() {
-        JTextArea area = new JTextArea();
-
-        area.setColumns(20);
-        area.setRows(10);
-        area.setFont(new Font("Arial Black", Font.BOLD, 16));
-        area.setBorder(BorderFactory.createBevelBorder(1));
-        area.setBounds(50, 130, 900, 200);
-        area.setLineWrap(true);
-        area.setWrapStyleWord(true);
-        area.setVisible(false);
-
-        return area;
-    }
-
-    private JTextArea resultArea() {
-        JTextArea area = new JTextArea();
-
-        area.setColumns(20);
-        area.setRows(10);
-        area.setFont(new Font("Arial Black", Font.BOLD, 16));
-        area.setBorder(BorderFactory.createBevelBorder(1));
-        area.setBounds(50, 390, 900, 200);
-        area.setLineWrap(true);
-        area.setWrapStyleWord(true);
-        area.setVisible(false);
-        area.setEditable(false);
-
-        return area;
-    }
-
-    private JScrollPane makeScrollable(JTextArea area) {
-        JScrollPane scroll = new JScrollPane(area);
-
-        scroll.setBounds(area.getX(), area.getY(), area.getWidth(), area.getHeight());
-        scroll.setVisible(false);
-
-        return scroll;
     }
 
     @Override
