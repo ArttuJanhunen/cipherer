@@ -61,4 +61,12 @@ jacocoTestReport {
     }
 }
 
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Quickstart',
+        'Implementation-Version': '1.0',
+        'Main-Class': 'Main'
+    }
+}
+
 check.dependsOn jacocoTestReport

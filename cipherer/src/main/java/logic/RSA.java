@@ -6,6 +6,7 @@
 package logic;
 
 import java.math.BigInteger;
+import logic.helpers.SubString;
 
 /**
  *
@@ -124,8 +125,8 @@ public class RSA {
             while (message.length() < 6) {
                 message = "0" + message;
             }
-            letters += (char) Integer.parseInt(message.substring(0, 3));
-            letters += (char) Integer.parseInt(message.substring(3));
+            letters += (char) Integer.parseInt(SubString.subString(message, 0, 3));
+            letters += (char) Integer.parseInt(SubString.subString(message, 3, message.length()));
         }
 
         return letters;
